@@ -1,0 +1,10 @@
+pcregrep: pcre_exec() gave error -8 while matching this text:
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+pcregrep: pcre_exec() gave error -8 while matching this text:
+
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+pcregrep: Error -8, -21 or -27 means that a resource limit was exceeded.
+pcregrep: Check your regex for nested unlimited loops.

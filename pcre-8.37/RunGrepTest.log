@@ -1,0 +1,6 @@
+ 
+Testing pcregrep version 8.37 2015-04-28
+Testing pcregrep main features
+Skipping pcregrep UTF-8 tests: no UTF-8 support in PCRE library
+Testing pcregrep newline settings
+PASS RunGrepTest (exit status: 0)

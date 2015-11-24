@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "name": "${parcel.name}",
+  "version": "${project.version}",
+
+  "setActiveSymlink": true,
+
+  "provides": [
+    "${project.artifactId}"
+  ],
+
+  "scripts": {
+    "defines": "${project.artifactId}.sh"
+  },
+
+  "components": [
+    {
+      "name": "${parcel.name}",
+      "version": "${project.version}",
+      "pkg_version": "${project.version}"
+    }
+  ],
+
+  "packages": [],
+}

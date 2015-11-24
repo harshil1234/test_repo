@@ -1,0 +1,64 @@
+
+PCRE C library tests using test data from ./testdata
+PCRE version 8.37 2015-04-28
+
+---- Testing 8-bit library ----
+
+Test 1: Main functionality (Compatible with Perl >= 5.10)
+  OK
+  OK with study
+Test 2: API, errors, internals, and non-Perl stuff (not UTF-8)
+  OK
+  OK with study
+Test 3: Locale-specific features (using 'fr_FR' locale)
+  OK
+  OK with study
+Test 4: UTF-8 support (Compatible with Perl >= 5.10)
+  Skipped because UTF-8 support is not available
+Test 5: API, internals, and non-Perl stuff for UTF-8 support
+  Skipped because UTF-8 support is not available
+Test 6: Unicode property support (Compatible with Perl >= 5.10)
+  Skipped because Unicode property support is not available
+Test 7: API, internals, and non-Perl stuff for Unicode property support
+  Skipped because Unicode property support is not available
+Test 8: DFA matching main functionality
+  OK
+  OK with study
+Test 9: DFA matching with UTF-8
+  Skipped because UTF-8 support is not available
+Test 10: DFA matching with Unicode properties
+  Skipped because Unicode property support is not available
+Test 11: Internal offsets and code size tests
+  Skipped because Unicode property support is not available
+Test 12: JIT-specific features (when JIT is available)
+  Skipped because JIT is not available or not usable
+Test 13: JIT-specific features (when JIT is not available)
+  OK
+Test 14: Specials for the basic 8-bit library
+  OK
+  OK with study
+Test 15: Specials for the 8-bit library with UTF-8 support
+  Skipped because UTF-8 support is not available
+Test 16: Specials for the 8-bit library with Unicode propery support
+  Skipped because Unicode property support is not available
+Test 17: Specials for the basic 16/32-bit library
+  Skipped when running 8-bit tests
+Test 18: Specials for the 16/32-bit library with UTF-16/32 support
+  Skipped when running 8-bit tests
+Test 19: Specials for the 16/32-bit library with Unicode property support
+  Skipped when running 8-bit tests
+Test 20: DFA specials for the basic 16/32-bit library
+  Skipped when running 8-bit tests
+Test 21: Reloads for the basic 16/32-bit library
+  Skipped when running 8-bit tests
+Test 22: Reloads for the 16/32-bit library with UTF-16/32 support
+  Skipped when running 8-bit tests
+Test 23: Specials for the 16-bit library
+  Skipped when running 8/32-bit tests
+Test 24: Specials for the 16-bit library with UTF-16 support
+  Skipped when running 8/32-bit tests
+Test 25: Specials for the 32-bit library
+  Skipped when running 8/16-bit tests
+Test 26: Specials for the 32-bit library with UTF-32 support
+  Skipped when running 8/16-bit tests
+PASS RunTest (exit status: 0)

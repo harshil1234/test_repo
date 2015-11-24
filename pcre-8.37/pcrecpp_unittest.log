@@ -1,0 +1,57 @@
+PCRE C++ wrapper tests
+Testing FullMatch
+Testing PartialMatch
+Testing hex
+Testing octal
+Testing decimal
+Testing Replace
+Testing Extract
+Testing Consume
+Testing FindAndConsume
+Testing QuoteMeta
+Testing match-number peculiarity
+Testing error reporting
+Testing recursion
+Testing Options
+Testing Option <CASELESS (class)>
+Testing Option <CASELESS (class2)>
+Testing Option <CASELESS (class)>
+Testing Option <CASELESS (function)>
+Testing Option <CASELESS (function)>
+Testing Option <no CASELESS>
+Testing Option <MULTILINE (class)>
+Testing Option <MULTILINE (class2)>
+Testing Option <MULTILINE (function)>
+Testing Option <no MULTILINE>
+Testing Option <DOTALL (class)>
+Testing Option <DOTALL (class2)>
+Testing Option <DOTALL (function)>
+Testing Option <no DOTALL>
+Testing Option <no DOLLAR_ENDONLY>
+Testing Option <DOLLAR_ENDONLY 1>
+Testing Option <DOLLAR_ENDONLY 2>
+Testing Option <EXTENDED (class)>
+Testing Option <EXTENDED (class2)>
+Testing Option <EXTENDED (class)>
+Testing Option <EXTENDED (function)>
+Testing Option <EXTENDED (function)>
+Testing Option <no EXTENDED>
+Testing Option <no NO_AUTO_CAPTURE>
+testing Option <NO_AUTO_CAPTURE>
+Testing Option <UNGREEDY 1>
+Testing Option <UNGREEDY 2>
+Testing Option <UNGREEDY>
+Testing Option <no UNGREEDY>
+Testing Option <no UNGREEDY>
+Testing Option <EXTRA 1>
+Testing Option <EXTRA 2>
+Testing Option <no EXTRA>
+Testing Option <all_options (CASELESS|DOTALL)>
+Testing Option <all_options (0)>
+Testing Option <all_options (MULTILINE|EXTENDED)>
+Testing Option <all_options (MULTILINE|EXTENDED) with constructor>
+Testing Option <all_options (MULTILINE|EXTENDED) with concatenation>
+Testing Option <all_options (0)>
+Testing constructors
+OK
+PASS pcrecpp_unittest (exit status: 0)
