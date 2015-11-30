@@ -22,4 +22,15 @@
   ],
 
   "packages": [],
+  "groups": [
+    "${edh.workflow.group}"
+  ],
+  "users": {
+    "${edh.workflow.user}" : {
+      "longname" : "${edh.workflow.user.longname}",
+      "home" : "/var/run/${edh.workflow.user}",
+      "shell" : "/bin/bash",
+      "extra_groups" : [ ]
+    }
+  }
 }

@@ -30,6 +30,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
     <version.java.min>1.7</version.java.min>
+    <edh.workflow.user>root</edh.workflow.user>
+    <edh.workflow.user.longname>Root user</edh.workflow.user.longname>
+    <edh.workflow.group>${edh.workflow.user}</edh.workflow.group>
   </properties>
 
   <build>
@@ -80,20 +83,6 @@
           </execution>
         </executions>
       </plugin>
-      <!-- Confirm our data description works with the data generator -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <version>2.19</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>integration-test</goal>
-              <goal>verify</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>com.cloudera.enterprise</groupId>
         <artifactId>schema-validator-maven-plugin</artifactId>
@@ -137,12 +126,24 @@
 
   <profiles>
     <profile>
+      <repositories>
+        <repository>
+          <id>com.cloudera.releases</id>
+          <url>https://repository.cloudera.com/artifactory/cloudera-repos/</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
       <id>create-parcel</id>
       <dependencies>
         <!-- We need this at compile scope because plugin dependencies don't work with exec:exec -->
         <dependency>
             <groupId>com.cloudera.enterprise</groupId>
-            <artifactId>schema-validator-maven-plugin</artifactId>
+            <artifactId>schema-validator</artifactId>
             <version>${cm.ext.validation.version}.0</version>
             <scope>provided</scope>
             <optional>true</optional>
@@ -153,6 +154,13 @@
           <plugin>
             <artifactId>maven-resources-plugin</artifactId>
             <version>2.7</version>
+            <dependencies>
+            <dependency>
+                <groupId>org.apache.maven.shared</groupId>
+                <artifactId>maven-filtering</artifactId>
+                <version>1.3</version>
+            </dependency>
+          </dependencies>
             <executions>
               <execution>
                 <id>filter-parcel-meta</id>
@@ -170,17 +178,17 @@
                   </resources>
                 </configuration>
               </execution>
-              <execution>
+              <!-- <execution>
                 <id>copy-ha-proxy</id>
                 <phase>process-resources</phase>
                 <goals>
                   <goal>copy-resources</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>${project.build.directory}</outputDirectory>
+                  <outputDirectory>${project.build.directory}/parcel-meta</outputDirectory>
                   <resources>
                     <resource>
-                      <directory>haproxy-1.6.2</directory>
+                      <directory>haproxy-1.6.2/haproxy</directory>
                       <filtering>true</filtering>
                     </resource>
                   </resources>
@@ -193,15 +201,15 @@
                   <goal>copy-resources</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>${project.build.directory}</outputDirectory>
+                  <outputDirectory>${project.build.directory}/parcel-meta</outputDirectory>
                   <resources>
                     <resource>
-                      <directory>pcre-8.37</directory>
+                      <directory>pcre-8.37/.libs/libpcre.so.1</directory>
                       <filtering>true</filtering>
                     </resource>
                   </resources>
                 </configuration>
-              </execution>
+              </execution> -->
             </executions>
           </plugin>
           <plugin>

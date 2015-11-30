@@ -32,15 +32,15 @@
       "name" : "StartHaproxy",
       "label" : "Start haproxy",
       "description" : "haprpxy process is started",
-      "roleName" : "START_HAPROXY",
+      "roleName" : "HAPROXY",
       "roleCommand" : "StartHaproxy",
       "runMode" : "single"
     }
   ],
   "roles" : [
     {
-      "name" : "START_HAPROXY",
-      "label" : "Start HA Proxy",
+      "name" : "HAPROXY",
+      "label" : "HAProxy servie",
       "pluralLabel" : "HA Proxy installation",
       "startRunner" : {
         "program" : "scripts/control.sh"

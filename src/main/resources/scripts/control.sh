@@ -18,5 +18,27 @@
 ##
 
 #command to start the haproxy process
+set -e
+ROLE=$1
+CMD=$2
 
-sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
+chmod +x $HAPROXY_LOC/haproxy
+cp $HAPROXY_LOC/haproxy /usr/sbin/
+cp $HAPROXY_LOC/libpcre.so.1.2.5 /usr/local/lib/
+
+
+case ${CMD} in
+  "start")
+    echo "changing ${ROLE} status to started."
+    # same approach as ZNCRYPT csd
+    chmod u+x scripts/dummy-service.sh
+    exec scripts/dummy-service.sh
+    ;;
+  "deploy")
+    echo "config deploy of ${ROLE}."
+    exit 0
+    ;;
+  *)
+    echo "Unknown command ${CMD} for role ${ROLE}."
+    exit 1
+esac
